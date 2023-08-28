@@ -18,3 +18,9 @@ binary_tree_print.c
 16-main.c
 17-main.c
 18-main.c
+0-node
+1-left
+2-right
+3-del
+4-leaf
+5-root
