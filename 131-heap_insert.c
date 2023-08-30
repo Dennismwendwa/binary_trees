@@ -26,7 +26,7 @@ heap_t *heap_insert(heap_t **root, int value)
 	if (*root == NULL)
 	{
 		*root = created;
-		return (created);
+		return (*root);
 	}
 
 	traverse_and_insert(*root, created);
@@ -38,8 +38,7 @@ heap_t *heap_insert(heap_t **root, int value)
 		max_heap =  max_heap->parent;
 	}
 
-	return (created);
-
+	return (max_heap);
 }
 
 /**
