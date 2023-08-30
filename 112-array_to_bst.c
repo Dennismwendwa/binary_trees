@@ -5,7 +5,7 @@
  * array_to_bst - function that builds binary tree form array
  * @array:- pointer to the array
  * @size:- size of the array
- * Raturn:- Always 0
+ * Return:- Always 0
  */
 
 bst_t *array_to_bst(int *array, size_t size)
