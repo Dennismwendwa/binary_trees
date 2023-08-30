@@ -12,6 +12,8 @@ static bst_t *bst_looksmall(bst_t *head);
 
 bst_t *bst_remove(bst_t *root, int value)
 {
+	bst_t *tmp;
+
 	if (!root)
 		return (NULL);
 
@@ -23,18 +25,18 @@ bst_t *bst_remove(bst_t *root, int value)
 	{
 		if (root->left == NULL)
 		{
-			bst_t *tmp = root->right;
+			tmp = root->right;
 			free(root);
 			return (tmp);
 		}
 		else if (root->right == NULL)
 		{
-			bst_t *tmp = root->left;
+			tmp = root->left;
 			free(root);
 			return (tmp);
 		}
 
-		bst_t *tmp = bst_looksmall(root->right);
+		tmp = bst_looksmall(root->right);
 		root->n = tmp->n;
 		root->right = bst_remove(root->right, tmp->n);
 	}
