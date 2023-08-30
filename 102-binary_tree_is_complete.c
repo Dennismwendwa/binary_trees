@@ -26,6 +26,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
  * @tree:- pointer to root of the tree
  * @idx:- index of the node we at
  * @siz:- size of the binary tree
+ * Return:- Always 0
  */
 
 int complte_tree(const binary_tree_t *tree, int idx, int siz)
