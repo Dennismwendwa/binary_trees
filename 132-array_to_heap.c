@@ -26,9 +26,7 @@ heap_t *array_to_heap(int *array, size_t size)
 		created->right = NULL;
 
 		if (root == NULL)
-		{
 			root = created;
-		}
 		else
 		{
 			traverse_and_insert(root, created);
@@ -39,8 +37,7 @@ heap_t *array_to_heap(int *array, size_t size)
 }
 
 /**
- * trav_and_heap - insert
- * @root: node
+ * trav_and_heap - heapify node
  * @create: node
  */
 void trav_and_heap(heap_t *created)
