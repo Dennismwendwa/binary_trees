@@ -1,8 +1,5 @@
 #include "binary_trees.h"
 
-void traverse_and_insert(heap_t *root, heap_t *created);
-void swap_max_heap(int *n, int *nn);
-
 /**
  * heap_insert -  function that inserts a value in Max Binary Heap
  * @root: a double pointer to the root node of the Heap to insert the value
@@ -25,15 +22,15 @@ heap_t *heap_insert(heap_t **root, int value)
 	if (*root == NULL)
 	{
 		*root = created;
-		return (*root);
 	}
-
-	traverse_and_insert(*root, created);
-	
-	while (created->parent != NULL && created->n > created->parent->n)
+	else
 	{
-		swap_max_heap(&(created->n), &(created->parent->n));
-		created =  created->parent;
+		traverse_and_insert(*root, created);
+		while (created->parent != NULL && created->n > created->parent->n)
+		{
+			swap_max_heap(&(created->n), &(created->parent->n));
+			created =  created->parent;
+		}
 	}
 
 	return (created);
