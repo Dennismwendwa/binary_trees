@@ -2,7 +2,7 @@
 /**
  * binary_tree_is_heap - function that checks if a binary tree is a valid
  * Max Binary Heap
- * @tree:  is a pointer to the root node of the tree to check
+ * @tree: is a pointer to the root node of the tree to check
  * Return: 0 if tree is NULL, or 1
  */
 int binary_tree_is_heap(const binary_tree_t *tree)
