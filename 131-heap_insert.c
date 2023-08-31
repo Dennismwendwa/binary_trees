@@ -1,7 +1,6 @@
 #include "binary_trees.h"
 
 void traverse_and_insert(heap_t *root, heap_t *created);
-
 void swap_max_heap(int *n, int *nn);
 
 /**
@@ -12,7 +11,7 @@ void swap_max_heap(int *n, int *nn);
  */
 heap_t *heap_insert(heap_t **root, int value)
 {
-	heap_t *created, *max_heap;
+	heap_t *created;
 
 	created = malloc(sizeof(heap_t));
 	if (created == NULL)
@@ -31,14 +30,13 @@ heap_t *heap_insert(heap_t **root, int value)
 
 	traverse_and_insert(*root, created);
 	
-	max_heap = created;
-	while (max_heap->parent != NULL && max_heap->n > max_heap->parent->n)
+	while (created->parent != NULL && created->n > created->parent->n)
 	{
-		swap_max_heap(&(max_heap->n), &(max_heap->parent->n));
-		max_heap =  max_heap->parent;
+		swap_max_heap(&(created->n), &(created->parent->n));
+		created =  created->parent;
 	}
 
-	return (max_heap);
+	return (created);
 }
 
 /**
