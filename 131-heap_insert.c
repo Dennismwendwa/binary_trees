@@ -3,7 +3,7 @@
 /**
  * heap_insert -  function that inserts a value in Max Binary Heap
  * @root: a double pointer to the root node of the Heap to insert the value
- * @value:  value to store in the node to be inserted
+ * @value: value to store in the node to be inserted
  * Return: a pointer to the created node, or NULL on failure
  */
 heap_t *heap_insert(heap_t **root, int value)
@@ -20,9 +20,7 @@ heap_t *heap_insert(heap_t **root, int value)
 	created->left = NULL;
 
 	if (*root == NULL)
-	{
 		*root = created;
-	}
 	else
 	{
 		traverse_and_insert(*root, created);
@@ -38,8 +36,8 @@ heap_t *heap_insert(heap_t **root, int value)
 
 /**
  * traverse_and_insert - insert
- * @root: node
- * @create: node
+ * @root: node of root
+ * @created: node to add
  */
 void traverse_and_insert(heap_t *root, heap_t *created)
 {
@@ -61,7 +59,6 @@ void traverse_and_insert(heap_t *root, heap_t *created)
 		}
 		else
 			trav[i++] = position->left;
-
 
 		if (position->right == NULL)
 		{
