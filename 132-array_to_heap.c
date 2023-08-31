@@ -38,7 +38,7 @@ heap_t *array_to_heap(int *array, size_t size)
 
 /**
  * trav_and_heap - heapify node
- * @create: node
+ * @created: node to create
  */
 void trav_and_heap(heap_t *created)
 {
