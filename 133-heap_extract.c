@@ -14,9 +14,9 @@ void rebuild_heap(heap_t *root)
 
 	large_n = root;
 
-	if (root != NULL && root->left->n > large_n->n)
+	if (root->left != NULL && root->left->n > large_n->n)
 		large_n = root->left;
-	if (root != NULL && root->right->n > large_n->n)
+	if (root->right != NULL && root->right->n > large_n->n)
 		large_n = root->right;
 
 	if (large_n != root)
@@ -43,15 +43,11 @@ int heap_extract(heap_t **root)
 
 	saved_data = (*root)->n;
 	trav = *root;
-
 	while (trav->right != NULL)
 	{
 		before_last_right_node = trav;
 		trav = trav->right;
 	}
-
-	(*root)->n = trav->n;
-
 	/*free the rightmost node that has replaced the root*/
 	if (before_last_right_node != NULL)
 	{
@@ -63,9 +59,9 @@ int heap_extract(heap_t **root)
 	else
 		(*root) = NULL;
 
+	if(trav != (*root))
+		(*root)->n = trav->n;
 	free(trav);
-
 	rebuild_heap(*root);
-
 	return (saved_data);
 }
