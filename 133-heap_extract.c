@@ -59,7 +59,7 @@ int heap_extract(heap_t **root)
 	else
 		(*root) = NULL;
 
-	if(trav != (*root))
+	if (trav != (*root))
 		(*root)->n = trav->n;
 	free(trav);
 	rebuild_heap(*root);
