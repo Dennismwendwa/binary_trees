@@ -2,6 +2,7 @@
 /**
  * heap_to_sorted_array - heap to array
  * @size: sizze of array
+ * @heap:- pointer to root
  * Return: sorted array in in descending order
  */
 int *heap_to_sorted_array(heap_t *heap, size_t *size)
